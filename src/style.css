@@ -12,7 +12,6 @@ body{
     padding: 5%;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
     align-items: center;
     height: 80vh;
     width: auto;
@@ -23,7 +22,6 @@ body{
     flex-direction: row;
     columns: 2;
     flex-wrap: wrap;
-    /*align-items: center;*/
     justify-content: space-evenly;
     width: 100%;
 }
@@ -43,6 +41,10 @@ body{
     justify-content: space-around;
 }
 
+#descifrar{
+    display: none;
+}
+
 /** Selectores de atributo*/
 textarea[name="msg"] {
     resize: none;
@@ -50,11 +52,10 @@ textarea[name="msg"] {
     opacity: 1;
     color: #000000;
     width: 298px;
-    height: 168px; /*200*/
+    height: 168px;
     font-style: italic;
     font-size:larger;
     align-self: center;
-    /*flex: 1 3 auto;*/
 }
 
 input[type="button"]{
@@ -66,7 +67,7 @@ input[type="button"]{
 }
 
 input[name="atras"], input[name="adelante"]{
-    background-color:green;
+    background-color: darkslateblue;
     display: block;
     height: 37px;
     width: 37px;

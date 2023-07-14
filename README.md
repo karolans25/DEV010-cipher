@@ -62,8 +62,41 @@ a olvidar las contraseñas.
 
 ## 2. Experiencia de Usuario e Interfaz
 
-**Imagen de la interfaz de entrada**
+### 2.1 Comportamiento esperado
 
+La estructura general de la primera vista que ve el usuario es la siguiente:
+![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
+
+En la parte inferior derecha hay un botón con una flecha hacia la derecha, la cual servirá para 
+navegar entre escoger la opción de cifrar o descifrar. Al hacer click se observa el cambio en el 
+botón que acompaña la flecha indicando si el proceso de de cifrado o de descifrado.
+
+![Paso 2](src/img/flujo_bosquejo/paso2.png)
+
+Luego se observa qu es el momento de ingresar el texto para el cifrado: Las restricciones en el tipo
+de datos que puede ingresar el usuario es que no puede utilizar minúsuclas, la ñ, números ni algún 
+otro caracter especial.
+
+![Paso 3](src/img/flujo_bosquejo/paso3.png)
+
+Ahora queremos que cifre el texto *LAROSADEGUADALUPE* y lo ingresamos en el recuadro donde dice 
+*Ingrese su texto aquí...*. Por defecto el valor de offset que aparece es de *13*; sin embargo, el 
+usuario debe poder ingresar el valor que desee siempre y cuando sea positivo y mayor que 0. Luego se 
+da click sobre el botón de **Cifrar**, donde el texto que se había escrito en principio se reescribe 
+con el texto ya cifrado y ahora se el botón nos da la opción de **Descifrar** o de con la flecha izquierda volver a la opción de **Cifrar**.
+
+![Paso 4](src/img/flujo_bosquejo/paso4.png)
+
+![Paso 5](src/img/flujo_bosquejo/paso5.png)
+![Paso 6](src/img/flujo_bosquejo/paso6.png)
+![Paso 7](src/img/flujo_bosquejo/paso7.png)
+![Paso 8](src/img/flujo_bosquejo/paso8.png)
+![Paso 9](src/img/flujo_bosquejo/paso9.png)
+
+
+#### 2.1.1 Historia 1: Poder escoger si codificar o decodificar
+
+Bosquejos iniciales para 
 Descripción del flujo de historias de usuario
 
 Descripción de las interacciones entre eventos 
