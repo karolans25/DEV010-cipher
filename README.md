@@ -67,39 +67,78 @@ a olvidar las contraseñas.
 La estructura general de la primera vista que ve el usuario es la siguiente:
 ![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
 
-En la parte inferior derecha hay un botón con una flecha hacia la derecha, la cual servirá para 
-navegar entre escoger la opción de cifrar o descifrar. Al hacer click se observa el cambio en el 
-botón que acompaña la flecha indicando si el proceso de de cifrado o de descifrado.
+#### 2.1.1 Historia 1: Poder escoger si codificar o decodificar
+
+Para esto se navega entre las opciones con los botones en forma de flecha
+que se ubican a cada lado del botón encargado de **Cifrar** o **Descifrar** el 
+mensaje. En primera instancia está habilitada la función de **Cifrar**.
+
+![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
+
+Al hacer click en la flecha hacia la derecha se muestra la opción de **Descifrar**.
 
 ![Paso 2](src/img/flujo_bosquejo/paso2.png)
 
-Luego se observa qu es el momento de ingresar el texto para el cifrado: Las restricciones en el tipo
-de datos que puede ingresar el usuario es que no puede utilizar minúsuclas, la ñ, números ni algún 
-otro caracter especial.
+Al hacer click en la flecha que apunta hacia la izquierda vuelve a la vista principal o inicial.
+
+![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
+
+
+#### 2.1.2 Historia 2: Poder codificar un texto
+
+El texto que se quiere codificar debe ser escrito en el recuadro donde dice: *Ingrese el texto aquí...*. En esta parte por 
+defecto siempre el offset es igual a 13, pero el usuario tiene la posibilidad de cambiarlo. Las restricciones del texto 
+ingresado es que debe ser en mayúsculas y no recibe la *ñ*, minñusculas, nùmeros ni caracteres especiales.
 
 ![Paso 3](src/img/flujo_bosquejo/paso3.png)
 
-Ahora queremos que cifre el texto *LAROSADEGUADALUPE* y lo ingresamos en el recuadro donde dice 
-*Ingrese su texto aquí...*. Por defecto el valor de offset que aparece es de *13*; sin embargo, el 
-usuario debe poder ingresar el valor que desee siempre y cuando sea positivo y mayor que 0. Luego se 
-da click sobre el botón de **Cifrar**, donde el texto que se había escrito en principio se reescribe 
-con el texto ya cifrado y ahora se el botón nos da la opción de **Descifrar** o de con la flecha izquierda volver a la opción de **Cifrar**.
+Luego de ingresado el texto que se quiere codificar se da click sobre el botón *Cifrar*. Para este caso, el ejemplo de texto 
+es *LAROSADEGUADALUPE* y dejaremos el valor del offset igual a *13*. Luego de hacer click el texto que el usuario ingresó por 
+teclado es reemplazado con el nuevo texto cifrado y nos lleva a la vista donde la opción válida para el Botón de funciones es
+**Descifrar**. 
 
 ![Paso 4](src/img/flujo_bosquejo/paso4.png)
 
 ![Paso 5](src/img/flujo_bosquejo/paso5.png)
+
+
+#### 2.1.3 Historia 3: Poder decodificar un texto
+
+Para decodificar un texto cifrado desde la pantalla principal se debe hacer click sobre la flecha que apunta hacia la derecha
+para ingresar el texto a descifrar.
+![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
+
+Una vez ingresado el texto que se quiere decodificar se da click sobre el botón con la funcionalidad **Decodificar** y nos lleva de nuevo a la vista principal, pero en esta ocasión el texto que se quería descifrar es reemplazado por el texto original y el botón de funcionalidad es ahora para **Cifrar**.
+
+![Paso 5](src/img/flujo_bosquejo/paso5.png)
+
 ![Paso 6](src/img/flujo_bosquejo/paso6.png)
+
+
+#### 2.1.4 Historia 4: Poder escoger un valor de offset para la Codificación
+
+Para este caso y continuando con el ejemplo anterior de *LAROSADEGUADALUPE*, se ingresó un valor de offset de *5*. Luego se procede a dar click sobre el botón *Cifrar* y se obtiene el resultado esperado.
 ![Paso 7](src/img/flujo_bosquejo/paso7.png)
 ![Paso 8](src/img/flujo_bosquejo/paso8.png)
+
+#### 2.1.5 Historia 5: Poder escoger un valor de offset para la Decodificación
+
+Utilizando el texto generado en la historia 4, nuevamente se va a cambiar el valor del offset por 13; de tal manera que, 
+al hacer click sobre el botón con la funcionalidad **Descifrar** nos muetra la vista inicial donde el texto a descifrar es
+reemplazado por el texto decodificado. Sin embargo, en este caso como el valor de ofset escogido para codificar y decodificar son distintos vemos que el texto decodificado es distinto al que se utilizó en un principio para codificar (*LAROSADEGUADALUPE*).
+
+![Paso 8](src/img/flujo_bosquejo/paso8.png)
+
 ![Paso 9](src/img/flujo_bosquejo/paso9.png)
 
+#### 2.1.6 Historia 6: El usuario ingresa un texto inválido
 
-#### 2.1.1 Historia 1: Poder escoger si codificar o decodificar
+Para este caso la aplicación verifica el texto ingresado y muestra una alerta indicándole al usuario que el texto ingresado 
+contiene caracteres no permitidos o es inválido.
 
-Bosquejos iniciales para 
-Descripción del flujo de historias de usuario
+#### 2.1.5 Historia 7: El usuario ingresa un valor de offset negativo o inválido
 
-Descripción de las interacciones entre eventos 
+De igual manera que en la historia 6, se muestra una alerta indicándole al usuario que el valor ingresado no es un nùmero entero mayor que 0 o es un valor inválido.
 
 
 ## 3. Requerimientos Funcionales y No Funcionales
@@ -163,4 +202,9 @@ Project Feedback:
 * [ ] El README contiene una definición del producto.
 
 
-*[Project 1 - Cipher in Trello](https://trello.com/invite/b/96ys0Mn4/ATTI6b8d992774ca310bcd278605f1ebe2214CA3BB25/project-1-cipher)*
+## 6. Documentación y Herramientas adicionales utilizadas
+
+* Se creó un tablero de [Project 1 - Cipher in Trello](https://trello.com/invite/b/96ys0Mn4/ATTI6b8d992774ca310bcd278605f1ebe2214CA3BB25/project-1-cipher) para adminsitrar y definir el *backlog* del proyecto y del *Sprint 1*. 
+* Se utilizó [Gimp](https://www.gimp.org/) y *Power Point* para realizar y detallar las imágenes presentadas.
+* Se utilizó una [IA](https://you.com) para preguntar y resolver dudas conceptuales sobre temas de los OA's del proyecto.
+* Se utilizó [Stack Over Flow](https://es.stackoverflow.com/) para consultar inconvenientes puntuales y entender cómo solucionarlos.
