@@ -1,65 +1,68 @@
-// MAYÚSCULAS, Ñ = 165 
-// minúsculas, ñ = 164
-// numeros
-//const min = 48, max = 57; // en ASCII
-const min_M = 65, max_M = 90, min_m = 97, max_m = 122; // en ASCII
+const min = 65, max = 90;
 
-const alphabet_M = [], alphabet_m = [];
+const alphabet = [];
 
-for(let i = min_M; i<=max_M; i++){
-  alphabet_M.push(String.fromCharCode(i));
-}
-
-for(let i = min_m; i<=max_m; i++){
-  alphabet_m.push(String.fromCharCode(i));
+for(let i = min; i<=max; i++){
+  alphabet.push(String.fromCharCode(i));
 }
 
 const cipher = {
   encode: function(offset, txt){
-    if (Number.isInteger(offset) && typeof txt === 'string'){
-      let result = "", mod = 0;
-      for (let i = 0; i < txt.length; i++){
-        if (txt[i] === txt[i].toUpperCase()){
-          mod = (alphabet_M.indexOf(txt[i])+parseInt(offset))%alphabet_M.length;
-          result += alphabet_M[mod];
-        } else if (txt[i] === txt[i].toLowerCase()){
-          mod = (alphabet_m.indexOf(txt[i])+parseInt(offset))%alphabet_m.length;
-          result += alphabet_m[mod];
-        }
+    const temp = txt;
+    let pos = 0, res = "";
+    //temp = temp.replace(/\s+/g, '');
+    if(typeof txt === "string"){
+      if(Number.isInteger(offset)){
+        temp.split("").forEach(function(item){
+          if(/[a-zA-Z]/.test(item)){
+            pos = (alphabet.indexOf(item.toUpperCase())+offset)%alphabet.length;
+            (item === item.toUpperCase()) ? res += alphabet[pos] : res+= alphabet[pos].toLowerCase();
+          } else {
+            res += item;
+          }
+        });
+        return res;
+      } else {
+        throw new TypeError("Ingresó un valor inválido");
       }
-      //console.log(result);
-      return result;
     } else {
       throw new TypeError("Ingresó un valor inválido");
     }
   },
 
   decode: function(offset, txt){
-    if (Number.isInteger(offset) && typeof txt === 'string'){
-      let result = "", mod = 0;
-      for (let i = 0; i < txt.length; i++){
-        if (txt[i] === txt[i].toUpperCase()){
-          mod = alphabet_M.indexOf(txt[i])-parseInt(offset);
-          if (mod < 0 && mod !== -26){
-            mod = alphabet_M.length + mod%alphabet_M.length;
+    const temp = txt;
+    let pos = 0, res = "";
+    if(typeof txt === "string"){
+      if(Number.isInteger(offset)){
+        temp.split("").forEach(function(item){
+          if(/[a-zA-Z]/.test(item)){
+            pos = (alphabet.indexOf(item.toUpperCase()) - offset);
+            (pos < 0 && pos !== -26) ? pos = alphabet.length + pos%alphabet.length : (pos > 0) ? pos = pos%alphabet.length : pos = 0;
+            (item === item.toUpperCase()) ? res += alphabet[pos] : res+= alphabet[pos].toLowerCase();
           } else {
-            mod = 0;
+            res += item;
           }
-          result += alphabet_M[mod];
-        } else if (txt[i] === txt[i].toLowerCase()){
-          mod = alphabet_m.indexOf(txt[i])-parseInt(offset);
-          if (mod < 0){
-            mod = alphabet_m.length + mod;
-          }
-          result += alphabet_M[mod];
-        }
+        });
+        return res;
+      } else {
+        throw new TypeError("Ingresó un valor inválido");
       }
-      //console.log(result);
-      return result;
     } else {
       throw new TypeError("Ingresó un valor inválido");
     }
   }
 }
+
+/*
+let txt = "la Rosa@";
+const offset = 13;
+for (let i = 0; i< 2; i++){
+  txt = cipher.encode(offset, txt);
+  console.log(txt);
+  txt = cipher.decode(offset, txt);
+  console.log(txt);
+}
+*/
 
 export default cipher;

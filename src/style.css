@@ -7,6 +7,15 @@ body{
     background-repeat: no-repeat;
 } 
 
+button{
+    background-color:darkblue;
+    color: white;
+    border-radius: 5%;
+    padding: 10px;
+    width: 35%;
+}
+
+
 /**Selectores de clase*/
 .box{
     padding: 5%;
@@ -26,6 +35,11 @@ body{
     width: 100%;
 }
 
+/*
+.hidden{
+    visibility: hidden;
+}
+*/
 
 /**Selectores de id*/
 #data{
@@ -41,14 +55,10 @@ body{
     justify-content: space-around;
 }
 
-#descifrar{
-    display: none;
-}
-
 /** Selectores de atributo*/
-textarea[name="msg"] {
+textarea[id="msg"] {
     resize: none;
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(255, 255, 255, 0.91);
     opacity: 1;
     color: #000000;
     width: 298px;
@@ -58,33 +68,35 @@ textarea[name="msg"] {
     align-self: center;
 }
 
-input[type="button"]{
-    background-color:darkblue;
-    color: white;
-    border-radius: 35%;
-    padding: 10px;
-    width: 35%;
-}
-
-input[name="atras"], input[name="adelante"]{
-    background-color: darkslateblue;
+button[name="atras"], button[name="adelante"]{
+    background-color: darkblue;
     display: block;
     height: 37px;
     width: 37px;
-    border-radius: 100%;
+    border-radius: 5%;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
-input[name="atras"]{
+button[name="atras"]{
     background-image: url(img/flecha_izq.png);
 }
 
-input[name="adelante"]{
+button[name="adelante"]{
     background-image: url(img/flecha_der.png);
 }
 
-input[type=button]:hover{
+input[type="number"]{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+button:hover{
     background-color: cyan;
     cursor: pointer;
     color: darkblue;
-}  
+}
+
+input[type="number"]:focus {
+    background-color: #f9f9f9;
+}

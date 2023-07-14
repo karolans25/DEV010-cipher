@@ -4,35 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Caesar Cipher</title>
-    <!--link rel="icon" type="image/png" href="img/favicon.png"/-->
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" type="module"></script>
-    <link rel="icon" type="image/png" href="./favicon.png"/>
-    <!--link rel="icon" href="favicon/favicon.ico" /-->
+    <link rel="icon" type="image/png" href="./img/favicon.png"/>
   </head>
   <body>
     <div class="box" id="root">
       <div class="box" id="data">
-        <h1>Hello world!</h1>
-        <textarea name="msg">Ingresa el texto aquí...</textarea>
-        <div class="container"  id="offset">
+
+        <h1>Enigma Code</h1>
+        <textarea id="msg" rows="11" cols="41"></textarea>
+        <div class="container">
           <label>offset: </label>
-          <input type="text" size="4" value="13">
+          <input type="number" id="offset" min="1" max="100" step="1" value="13" size="4">
         </div>
         <div class="container"  id="opciones">
-          <!--div class="input-group"-->
-          <input type="button" name="atras" value="" onclick="" hidden>
-          <input type="button" id="cifrar" value="Cifrar" onclick="">
-          <input type="button" id="descifrar" value="Descifrar" onclick="">
-          <input type="button" name="adelante" value="" onclick="">
-          <!--/div-->
+          <button id="atras_but" name="atras" value="" onclick="" hidden></button>
+          <button id="cifrar">Cifrar</button>
+          <button id="descifrar">Descifrar</button>
+          <button id="adelante_but" name="adelante" value="" onclick=""></button>
         </div>
-        <!--div class="container" id="title_container">
-        </div>
-        <div class="container" id="data_text">
-          <img src="img/cipher_me.png" alt="Introduce el texto aquí..." class="bg-image"-->
-          <!--input type="text-area"--> <!--autocomplete:on autocapitalize:characters-->
-        <!--/div-->
+
       </div>      
     </div>
   </body>
