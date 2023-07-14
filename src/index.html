@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Caesar Cipher</title>
+    <!--link rel="icon" type="image/png" href="img/favicon.png"/-->
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" type="module"></script>
+    <link rel="icon" href="favicon/favicon.ico" />
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
+    <div class="box" id="root">
+      <div class="box" id="data">
+        <h1>Hello world!</h1>
+        <textarea name="msg">Ingresa el texto aquí...</textarea>
+        <div class="container"  id="offset">
+          <label>offset: </label>
+          <input type="text" size="4">
+        </div>
+        <div class="container"  id="opciones">
+          <!--div class="input-group"-->
+          <input type="button" name="atras" value="" onclick="" disabled="disabled">
+          <input type="button" value="Cifrar" onclick="">
+          <input type="button" name="adelante" value="" onclick="">
+          <!--/div-->
+        </div>
+        <!--div class="container" id="title_container">
+        </div>
+        <div class="container" id="data_text">
+          <img src="img/cipher_me.png" alt="Introduce el texto aquí..." class="bg-image"-->
+          <!--input type="text-area"--> <!--autocomplete:on autocapitalize:characters-->
+        <!--/div-->
+      </div>      
     </div>
   </body>
 </html>

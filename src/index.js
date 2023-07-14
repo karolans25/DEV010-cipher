@@ -7,9 +7,9 @@ import cipher from './cipher.js';
 const offset = 33; 
 let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-alert(cipher.encode(offset, txt));
+//alert(cipher.encode(offset, txt));
 txt = "HIJKLMNOPQRSTUVWXYZABCDEFG";
-alert(cipher.decode(offset, txt));
+//alert(cipher.decode(offset, txt));
 
 //CASO 2: Decodificar
 //let offset = 13, txt = "YNEBFNQRTHNQNYHCR";
