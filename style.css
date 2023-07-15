@@ -1,0 +1,102 @@
+/**Selectores de tipo*/
+body{
+    background-color: #230555;
+    background-image: url("img/fondo_2.png");
+    background-position: center -5% right 10%; 
+    background-size:cover;
+    background-repeat: no-repeat;
+} 
+
+button{
+    background-color:darkblue;
+    color: white;
+    border-radius: 5%;
+    padding: 10px;
+    width: 35%;
+}
+
+
+/**Selectores de clase*/
+.box{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    width: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    columns: 2;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/*
+.hidden{
+    visibility: hidden;
+}
+*/
+
+/**Selectores de id*/
+#data{
+    border-radius: 5%;
+    /*background-color: white;*/
+    /*background: linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat,
+    url(img/cipher_me.png) center no-repeat, rebeccapurple;*/
+    background: url(img/encrypted.png) center no-repeat, lightblue;
+    background: url(img/encrypt.png) center no-repeat, lightblue;
+    /*border-color: green;
+    border: 10px;*/
+    background-size: initial;
+    justify-content: space-around;
+}
+
+/** Selectores de atributo*/
+textarea[id="msg"] {
+    resize: none;
+    background-color: rgba(255, 255, 255, 0.91);
+    opacity: 1;
+    color: #000000;
+    width: 298px;
+    height: 168px;
+    font-style: italic;
+    font-size:larger;
+    align-self: center;
+}
+
+button[name="atras"], button[name="adelante"]{
+    background-color: darkblue;
+    display: block;
+    height: 37px;
+    width: 37px;
+    border-radius: 5%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button[name="atras"]{
+    background-image: url(img/flecha_izq.png);
+}
+
+button[name="adelante"]{
+    background-image: url(img/flecha_der.png);
+}
+
+input[type="number"]{
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: cyan;
+    cursor: pointer;
+    color: darkblue;
+}
+
+input[type="number"]:focus {
+    background-color: #f9f9f9;
+}
