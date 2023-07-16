@@ -5,27 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js" type="module"></script>
     <link rel="icon" type="image/png" href="./img/favicon.png"/>
   </head>
   <body>
-    <div class="box" id="root">
-      <div class="box" id="data">
 
-        <h1>Enigma Code</h1>
-        <textarea id="msg" rows="11" cols="41"></textarea>
-        <div class="container">
-          <label>offset: </label>
-          <input type="number" id="offset" min="1" max="100" step="1" value="13" size="4">
-        </div>
-        <div class="container"  id="opciones">
-          <button id="atras_but" name="atras" value="" onclick="" hidden></button>
-          <button id="cifrar">Cifrar</button>
-          <button id="descifrar">Descifrar</button>
-          <button id="adelante_but" name="adelante" value="" onclick=""></button>
-        </div>
+    <header>
+      <h1>Enigma Code</h1>
+      <nav>
+        <a href="https://www.twitch.tv/karolans25" padding="1%"><ion-icon name="logo-twitch"></ion-icon><span>Twitch</span></a>
+        <a href="https://github.com/karolans25/DEV010-cipher" padding="1%"><ion-icon name="logo-github"></ion-icon>Github</a>
+      </nav>
+    </header>
 
-      </div>      
-    </div>
+    <main>
+      <article>
+        <!--div class="box" id="data"-->
+        <div class="box" id="data">
+
+          <section>
+            <p>Este espacio es un espacio seguro para poder cifrar tu información utilizando <i><strong>Ceaser Cipher</strong></i>
+            </p>
+            <textarea id="msg" rows="11" cols="41"></textarea>
+          </section>
+          <section>
+            <div class="container">
+              <label>offset: </label>
+              <input type="number" id="offset" min="1" max="100" step="1" value="13" size="4">
+            </div>
+            <div class="container"  id="opciones">
+              <button id="atras_but" name="atras" value="" onclick="" hidden></button>
+              <button id="cifrar">Cifrar</button>
+              <button id="descifrar">Descifrar</button>
+              <button id="adelante_but" name="adelante" value="" onclick=""></button>
+            </div>
+          </section>
+        </div>   
+      </article>   
+    </main>
+    <footer>
+      <div>Hecho con <ion-icon name="heart"></ion-icon> por <strong>Carolina Pulido Gómez</strong></div>
+    </footer>
+    <!--/div-->
+    <script src="index.js" type="module"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

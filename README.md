@@ -208,3 +208,4 @@ Project Feedback:
 * Se utilizó [Gimp](https://www.gimp.org/) y *Power Point* para realizar y detallar las imágenes presentadas.
 * Se utilizó una [IA](https://you.com) para preguntar y resolver dudas conceptuales sobre temas de los OA's del proyecto.
 * Se utilizó [Stack Over Flow](https://es.stackoverflow.com/) para consultar inconvenientes puntuales y entender cómo solucionarlos.
+* Diagrama de flujo realizado en [Figma](https://www.figma.com/file/Pmr8XnhtL6ELkBE6jxxwLK/Untitled?type=whiteboard&node-id=0%3A1&t=VByZsGsaOp94pb3C-1)
