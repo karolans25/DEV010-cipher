@@ -38,7 +38,14 @@ const cipher = {
         temp.split("").forEach(function(item){
           if(/[a-zA-Z]/.test(item)){
             pos = (alphabet.indexOf(item.toUpperCase()) - offset);
-            (pos < 0 && pos !== -26) ? pos = alphabet.length + pos%alphabet.length : (pos > 0) ? pos = pos%alphabet.length : pos = 0;
+            if (pos < 0){
+              pos = (-1)*pos;
+              pos = pos%alphabet.length;
+              pos = alphabet.length - pos;
+            } 
+            if (pos === 26){
+              pos = 0;
+            }
             (item === item.toUpperCase()) ? res += alphabet[pos] : res+= alphabet[pos].toLowerCase();
           } else {
             res += item;

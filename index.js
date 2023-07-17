@@ -57,20 +57,22 @@ function endecode(){
   const off = offset.value;
   if(typeof texto === "string" && texto !== ""){
     if(validarNumeroOffset(off)){
-      let res = "";
+      //let res = "";
       switch (func){
       case 0:
-        res = cipher.encode(parseInt(off), texto);
+        //res = cipher.encode(parseInt(off), texto);
+        textArea.value = cipher.encode(parseInt(off), texto);
         avanzar();
         break;
       case 1:
-        res = cipher.decode(parseInt(off), texto);
+        //res = cipher.decode(parseInt(off), texto);
+        textArea.value = cipher.decode(parseInt(off), texto);
         retroceder();
         break;
       default:
         break;
       }
-      textArea.value = res;
+      //textArea.value = res;
     } else {
       alert("El valor de offset debe ser un número entero mayor que 0");
     }
