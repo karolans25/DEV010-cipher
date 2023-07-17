@@ -45,7 +45,7 @@ article{
 button{
     background-color:darkblue;
     color: white;
-    border-radius: 5%;
+    border-radius: 15px;
     padding: 10px;
     width: 35%;
 }
@@ -84,7 +84,7 @@ p{
 
 /**Selectores de id*/
 #data{
-    border-radius: 5%;
+    border-radius: 15px;
     /*background-color: white;*/
     /*background: linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat,
     url(img/cipher_me.png) center no-repeat, rebeccapurple;*/
@@ -102,20 +102,21 @@ textarea[id="msg"] {
     background-color: rgba(255, 255, 255, 0.91);
     opacity: 1;
     color: #000000;
-    width: 298px;
-    height: 168px;
+    width: 270px;
+    height: 143px;
     font-style: italic;
     font-size:larger;
     align-self: center;
     border-radius: 5%;
+    padding: 5%;
 }
 
 button[name="atras"], button[name="adelante"]{
-    background-color: darkblue;
+    background-color: lightblue;
     display: block;
     height: 37px;
     width: 37px;
-    border-radius: 5%;
+    border-radius: 15px;
     background-position: center;
     background-repeat: no-repeat;
 }

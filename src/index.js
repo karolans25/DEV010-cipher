@@ -14,6 +14,7 @@ function iniciar(){
   cifrarBut.style.display = "block";
   descifrarBut.style.display = "none";
   atrasBut.style.visibility = "hidden";
+  alert("Ingresa tu texto a cifrar en el área de texto y escoge el valor de offset con el cuál se utilizará en Cifrado César.\n\nNavega con las flechas para escoger si deseas cifrar o descifrar el texto ingresado.\n\n\tAdelante!");
 }
 
 function avanzar(){
