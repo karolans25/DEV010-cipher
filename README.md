@@ -1,38 +1,27 @@
 # Cifrado César
 
-## Índice
+## 1. ¿Qué hace el proyecto?
+El proyecto permite que el usuario ingrese un texto, escoga un valor de offset (entero mayor que 0) y con estos dos datos te muestre por pantalla el texto cifrado.
+Además, te permite también realizar el proceso inverso, es decir, con un texto cifrado y un valor de offset te permite oberter el texto descifrado.
 
-* [1. Contexto del proyecto](#1-contexto)
-* [2. Experiencia de Usuario e Interfaz](#2-experiencia-de-usuario-e-interfaz)
-* [3. Requerimientos Funcionales y No Funcionales](#3-requerimientos-funcionales-y-no-funcionales)
-* [4. Hitos Opcionales](#4-hitos-opcionales)
-* [5. Para considerar Project Feedback](#5-para-considerar-project-feedback)
-
-***
-
-## 1. Contexto
-
-Hoy en día tenemos muchas cuentas en diversas aplicaciones y es fácil olvidar las
-contraseñas de ingreso. Por tanto, un servicio importante es poder cifrar y descifrar
-tus contraseñas de tal manera que puedas cifrar tu contraseña y guardarla tranquilamente 
-en un fichero con extensión *.txt* sin riesgo de ser descifrada por alguna persona que 
-no cuente con acceso al número de offset que utilizaste para cifrarla.
-
+### 1.1. ¿Qué es cifrar y descifrar?
 Cifrar significa ocultar el contenido de un mensaje a simple vista, de manera
 que sólo las partes autorizadas pueden descifrar un texto cifrado.
 El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher)
 es uno de los primeros métodos de cifrado conocidos. El emperador romano Julio
 César lo usaba para enviar órdenes secretas a sus generales en los campos de
-batalla.
-
-![caeser-cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/2000px-Caesar3.svg.png)
-
-
-El cifrado césar es una de las técnicas más simples para cifrar un mensaje. Es
+batalla. Es una de las técnicas más simples para cifrar un mensaje. Es
 un tipo de cifrado por sustitución, es decir que cada letra del texto original
 es reemplazada por otra que se encuentra un número fijo de posiciones
 (desplazamiento) más adelante en el mismo alfabeto.
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/2000px-Caesar3.svg.png" width="50%">
+
+El proceso de descifrar hace el proceso inverso, es decir que cada letra del texto cifrado
+es reemplazada por otra que se encuentra un número fijo de posiciones
+(desplazamiento) más atrás en el mismo alfabeto. En conclusión, para este tipo de cifrado, 
+cifrar es desplazar hacia la derecha un número fijo de posiciones y descifrar es desplazar 
+hacia la izquierda un número fijo de posiciones.
 
 Por ejemplo, si usamos un desplazamiento (_offset_) de 3 posiciones:
 
@@ -47,27 +36,52 @@ comunicación por sí mismos; el cifrado César sí puede formar parte de sistem
 más complejos de codificación, como el cifrado Vigenère, e incluso tiene
 aplicación en el sistema ROT13.
 
-#### ¿A quién va dirigido?
 
-A todas las personas que cuenten con acceso a redes sociales, correo electrónico, 
-plataformas educativas, registros empresariales, y demás aplicaciones o servidores
-en los que se requiera un *login*.
+## 2. ¿Por qué el proyecto es útil?
 
-En este proyecto se tiene una aplicación web que servirá para que tu usuaria
-pueda cifrar y descifrar un texto en el navegador indicando un desplazamiento
-específico de caracteres (_offset_). De esta manera desde adolescentes hasta 
-personas de la tercera edad se benefician con este servicio porque ya pueden 
-copiar el texto cifrado y pegarlo en un documento para mayor seguridad y sin riesgo
-a olvidar las contraseñas.
+En ocasiones la seguridad de nuestras contraseñas hace que sea fácil para personas 
+inescrupulosas robar, capturar o clonar nuestra información sencible de las cuentas
+de nuestras aplicaciones. Por eso, tener una aplicación de cifrado te permite mejorar 
+la seguridad y mantener segura tu información.
 
-## 2. Experiencia de Usuario e Interfaz
+## 3. ¿Cómo pueden comenzar los usuarios con el proyecto?
 
-### 2.1 Comportamiento esperado
+### 3.1 Parte técnica
 
-La estructura general de la primera vista que ve el usuario es la siguiente:
-![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
+Teniendo nodejs y git instalados en el PC, se debe clonar el proyecto y dentro del directorio
+del proyecto ejecutar el comando `npm install`. Esta instalación se realiza sólo la primera vez,
+después de clonar el proyecto. 
 
-#### 2.1.1 Historia 1: Poder escoger si codificar o decodificar
+Luego de esto, cada vez que se quiera utilizar la aplicación se debe lanzar el servidor local
+con el comando `npm start`, donde podrás ver un mensaje que te indica la direcicón que debes 
+ingresar en el navegador `https://localhost:3000`
+
+Con esto, podrás ver la primera vista o vista principal de la aplicación en tu navegador.
+
+![Vista inicial](src/img/flujo_aplicacion/paso0.png)
+
+## 4. Proceso de diseño del producto final
+
+### 4.0 Organizar el flujo de trabajo y responsabilidades
+
+Para organizar las tareas y los tiempos creé un tablero de Trello para el proyecto: [Cipher in Trello](https://trello.com/invite/b/96ys0Mn4/ATTI6b8d992774ca310bcd278605f1ebe2214CA3BB25/project-1-cipher).
+Ahí definí el backlog del proyecto y el backlog del sprint. 
+
+
+### 4.1 Determinar el flujo de interacciones en la aplicación
+
+Para esto primero hice un bosquejo de baja fidelidad sobre la estructura inicial que quería ver
+de la aplicación utilizando una [presentacion en drive](https://docs.google.com/presentation/d/1uge05RRMRmjqU7F6gilxUjw2hsOjjQ-lOqrP8ThQDJc/edit?usp=sharing).
+
+![vista inicial bosquejo](src/img/flujo_bosquejo/paso0.png)
+
+Luego de tener definidos los elementos de mi vista, procedí a hacer el [diagrama de flujo](src/Diagrama%20de%20Flujo.pdf) que indicara la interacción del usuario con los elementos de la vista.
+
+<img src="src/diagramaFlujo.png">
+
+Luego intentar definir las historias de usurio que se requieren:
+
+#### 4.1.1 Historia 1: Poder escoger si codificar o decodificar
 
 Para esto se navega entre las opciones con los botones en forma de flecha
 que se ubican a cada lado del botón encargado de **Cifrar** o **Descifrar** el 
@@ -84,7 +98,7 @@ Al hacer click en la flecha que apunta hacia la izquierda vuelve a la vista prin
 ![Bosquejo de ventana inicial](src/img/flujo_bosquejo/paso1.png)
 
 
-#### 2.1.2 Historia 2: Poder codificar un texto
+#### 4.1.2 Historia 2: Poder codificar un texto
 
 El texto que se quiere codificar debe ser escrito en el recuadro donde dice: *Ingrese el texto aquí...*. En esta parte por 
 defecto siempre el offset es igual a 13, pero el usuario tiene la posibilidad de cambiarlo. Las restricciones del texto 
@@ -102,7 +116,7 @@ teclado es reemplazado con el nuevo texto cifrado y nos lleva a la vista donde l
 ![Paso 5](src/img/flujo_bosquejo/paso5.png)
 
 
-#### 2.1.3 Historia 3: Poder decodificar un texto
+#### 4.1.3 Historia 3: Poder decodificar un texto
 
 Para decodificar un texto cifrado desde la pantalla principal se debe hacer click sobre la flecha que apunta hacia la derecha
 para ingresar el texto a descifrar.
@@ -115,13 +129,13 @@ Una vez ingresado el texto que se quiere decodificar se da click sobre el botón
 ![Paso 6](src/img/flujo_bosquejo/paso6.png)
 
 
-#### 2.1.4 Historia 4: Poder escoger un valor de offset para la Codificación
+#### 4.1.4 Historia 4: Poder escoger un valor de offset para la Codificación
 
 Para este caso y continuando con el ejemplo anterior de *LAROSADEGUADALUPE*, se ingresó un valor de offset de *5*. Luego se procede a dar click sobre el botón *Cifrar* y se obtiene el resultado esperado.
 ![Paso 7](src/img/flujo_bosquejo/paso7.png)
 ![Paso 8](src/img/flujo_bosquejo/paso8.png)
 
-#### 2.1.5 Historia 5: Poder escoger un valor de offset para la Decodificación
+#### 4.1.5 Historia 5: Poder escoger un valor de offset para la Decodificación
 
 Utilizando el texto generado en la historia 4, nuevamente se va a cambiar el valor del offset por 13; de tal manera que, 
 al hacer click sobre el botón con la funcionalidad **Descifrar** nos muetra la vista inicial donde el texto a descifrar es
@@ -131,17 +145,11 @@ reemplazado por el texto decodificado. Sin embargo, en este caso como el valor d
 
 ![Paso 9](src/img/flujo_bosquejo/paso9.png)
 
-#### 2.1.6 Historia 6: El usuario ingresa un texto inválido
-
-Para este caso la aplicación verifica el texto ingresado y muestra una alerta indicándole al usuario que el texto ingresado 
-contiene caracteres no permitidos o es inválido.
-
-#### 2.1.5 Historia 7: El usuario ingresa un valor de offset negativo o inválido
+#### 4.1.6 Historia 6: El usuario ingresa un valor de offset negativo o inválido
 
 De igual manera que en la historia 6, se muestra una alerta indicándole al usuario que el valor ingresado no es un nùmero entero mayor que 0 o es un valor inválido.
 
-
-## 3. Requerimientos Funcionales y No Funcionales
+### 4.2 Revisión de Cumplimiento de los Requermientos Funcionales y No Funcionales
 
 **1. Una interfaz que debe permitir a la usuaria:**
 
@@ -166,9 +174,13 @@ De igual manera que en la historia 6, se muestra una alerta indicándole al usua
 Los metódos de `cipher` (`encode` y `decode`) deben tener cobertura con
 pruebas unitarias.
 
+![Test de Pruebas unitarias](src/img/runTest.png)
+
 **3. Código de tu proyecto subido a tu repo y interfaz "desplegada".**  
 El código final debe estar subido en un repositorio en GitHub.  
 La interfaz o pagina web, debe ser "desplegada" usando GitHub Pages.
+
+![Github pages](src/img/githubPages.png)
 
 **4. Un README que contiene una definición del producto.**  
 En el README cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso
@@ -179,16 +191,8 @@ preguntas sirven como guia:
 * Cuáles son los objetivos de estos usuarios en relación con tu producto
 * Cómo crees que el producto que estás creando está resolviendo sus problemas
 
-## 4. Hitos Opcionales: 
 
-*1. Agrega soporte para ñ, minúsculas, números y otros caracteres*
-
-*2. Permitir cargar ficheros con extensión **.txt** para descifrar su contenido*  
-
-*3. Permitir escribir un fichero con extensión **.txt** para guardar el texto cifrado*  
-
-
-## 5. Para considerar Project Feedback
+### 5. Para considerar Project Feedback
 
 En resumen, los criterios de aceptación mínimos del proyecto para considerar
 Project Feedback:
@@ -202,10 +206,19 @@ Project Feedback:
 * [ ] El README contiene una definición del producto.
 
 
-## 6. Documentación y Herramientas adicionales utilizadas
+### 6. Documentación y Herramientas adicionales utilizadas
 
 * Se creó un tablero de [Project 1 - Cipher in Trello](https://trello.com/invite/b/96ys0Mn4/ATTI6b8d992774ca310bcd278605f1ebe2214CA3BB25/project-1-cipher) para adminsitrar y definir el *backlog* del proyecto y del *Sprint 1*. 
 * Se utilizó [Gimp](https://www.gimp.org/) y *Power Point* para realizar y detallar las imágenes presentadas.
 * Se utilizó una [IA](https://you.com) para preguntar y resolver dudas conceptuales sobre temas de los OA's del proyecto.
 * Se utilizó [Stack Over Flow](https://es.stackoverflow.com/) para consultar inconvenientes puntuales y entender cómo solucionarlos.
 * Diagrama de flujo realizado en [Figma](https://www.figma.com/file/Pmr8XnhtL6ELkBE6jxxwLK/Untitled?type=whiteboard&node-id=0%3A1&t=VByZsGsaOp94pb3C-1)
+* Presentaciones de la suite de Google para realizar el bosquejo de baja fidelidad y agregar animaciones
+a la presentación para simular la interacción
+* Github para almacenar el repositorio con el proyecto.
+* Nodeja y Git.
+
+### 7. Desarrolladora
+
+Carolina Rosa Pulido Gómez: Desarrolladora Web en formación gracias a la experiencia de Aprendizaje de 
+(Laboratoria)[https://www.laboratoria.la/]
