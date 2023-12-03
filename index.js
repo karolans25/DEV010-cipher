@@ -6,14 +6,15 @@ const adelanteBut = document.querySelector('#adelante_but');
 const atrasBut = document.querySelector('#atras_but');
 const cifrarBut = document.querySelector('#cifrar');
 const descifrarBut = document.querySelector('#descifrar');
-const msgBienvenida = "Ingrese el texto aquí...";
+const msgBienvenida = "";
 
 function iniciar(){
   textArea.value = msgBienvenida;
-  offset.value = 13;
+  offset.value = 7;
   cifrarBut.style.display = "block";
   descifrarBut.style.display = "none";
   atrasBut.style.visibility = "hidden";
+  alert("Ingresa tu texto a cifrar en el área de texto y escoge el valor de offset con el cuál se utilizará el Cifrado César.\n\nNavega con las flechas para escoger si deseas cifrar o descifrar el texto ingresado.\n\n\tAdelante!");
 }
 
 function avanzar(){
