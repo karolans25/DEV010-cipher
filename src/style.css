@@ -5,6 +5,7 @@ body{
     background-position: center -5% right 10%; 
     background-size:cover;
     background-repeat: no-repeat;
+    padding: 0;
 } 
 
 header, footer{
@@ -38,7 +39,6 @@ main{
 }
 
 article{
-    /*padding: 2%;*/
     align-self: center;
 }
 
@@ -71,8 +71,12 @@ a ion-icon,span{
     display: flex;
     flex-direction: column;
     padding: 10%;
-    width: fit-content;
-    height: fit-content;
+    /* width: 22vw;
+    height: 55vh; */
+    width: 300px;
+    height: 350px;
+    /* width: fit-content; */
+    /* height: fit-content; */
 }
 
 .container{

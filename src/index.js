@@ -10,7 +10,7 @@ const msgBienvenida = "";
 
 function iniciar(){
   textArea.value = msgBienvenida;
-  offset.value = 13;
+  offset.value = 7;
   cifrarBut.style.display = "block";
   descifrarBut.style.display = "none";
   atrasBut.style.visibility = "hidden";
