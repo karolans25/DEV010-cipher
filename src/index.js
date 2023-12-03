@@ -6,7 +6,7 @@ const adelanteBut = document.querySelector('#adelante_but');
 const atrasBut = document.querySelector('#atras_but');
 const cifrarBut = document.querySelector('#cifrar');
 const descifrarBut = document.querySelector('#descifrar');
-const msgBienvenida = "Ingrese el texto aquí...";
+const msgBienvenida = "";
 
 function iniciar(){
   textArea.value = msgBienvenida;
