@@ -1,27 +1,152 @@
-/**Selectores de tipo*/
-body{
-    background-color: #230555;
-    background-image: url("img/fondo_2.png");
-    background-position: center -5% right 10%; 
-    background-size:cover;
-    background-repeat: no-repeat;
+*{
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    display: flex;
+    background-color: #563B8F;
+    background-color: #C4C8F3;
+    /* background-image: url("img/fondo_2.png"); */
+    /* background-position: center -5% right 10%;  */
+    /* background-size:cover; */
+    /* background-repeat: no-repeat; */
 } 
 
 header, footer{
-    /*background-color: var(--color-bg);*/
-    background-color:  #230555;
+    width: 100vw;
+    height: calc(114px / 2 + 3px);
+    flex-shrink: 0;
+    background-color: #563B8F;
+    display: flex;
+    justify-content: center;
+    /* fill: #563B8F; */
+    position: fixed;
+    color: #FFF;
+}
+
+header{
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+header h1{
+    position: absolute;
+    margin-top: 5px;
+    /* color: #FFF;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 4.3px; */
+    color: #FFF;
+    text-align: center;
+    font-family: "Roboto Slab";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 42px; /* 182.609% */
+    letter-spacing: 2.3px;
+}
+
+header img{
+    position: absolute;
+    transform: translate(-6px, 46px);
+}
+
+main{
+    position: absolute;
+    top: calc(114px / 2 + 3px);
+    width: 100vw;
+    height: calc(100vh - (114px / 2 + 3px) - 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+section{
+    width: 80vw;
+    max-width: 800px;
+    min-width: 250px;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: green; */
+    margin: 15px;
+}
+
+textarea{
+    width: 90%;
+    border-radius: 40px;
+    border: 3px solid #563B8F;
+    background: #D9D9D9;
+    box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    font-size: medium;
+    color: #563B8F;
+
+    text-align: center;
+    font-family: "Roboto Slab";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 350% */
+    letter-spacing: 1.2px;
+}
+
+textarea::placeholder{
+    color: darkslategrey;
+    font-size: 15px;
+}
+
+button{
+    width: 200px;
+    height: 60px;
+    color: #FFF;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 40px;
+    background-color: #563B8F;
+    border: 5px solid #FEF87B;
+    filter: drop-shadow(5px 10px 6px rgba(6, 11, 64, 0.87));
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #FEF87B;
+    border: 5px solid #563B8F;
+    color: #000000;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    align-items: center;
+    text-align: center;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+/* footer{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     justify-content: center;
     color: white;
     padding: 3px;
-}
+} */
 
-nav{
-    /*background-color: var(--color-bg);*/
+/* nav{
     background-color:  #230555;
     display: flex;
     flex-direction: row;
@@ -29,9 +154,9 @@ nav{
     align-items: flex-end self-end;
     justify-content: flex-end;
     color: white;
-}
+} */
 
-main{
+/* main{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -40,46 +165,33 @@ main{
 
 article{
     align-self: center;
-}
+} */
 
-button{
-    background-color:darkblue;
-    color: white;
-    border-radius: 15px;
-    padding: 10px;
-    width: 35%;
-}
-
-a{
+/* a{
     padding: 10px;
     flex-wrap: nowrap;
     align-items: center;
-}
+} */
 
-p{
+/* p{
     width: 310px;
     padding-left: 5%;
-    /*align-content: flex-start;*/
-}
+} */
 
-a ion-icon,span{
+/* a ion-icon,span{
     color: lightblue;
-}
+} */
 
 /**Selectores de clase*/
-.box{
+/* .box{
     display: flex;
     flex-direction: column;
     padding: 10%;
-    /* width: 22vw;
-    height: 55vh; */
     width: 300px;
     height: 350px;
-    /* width: fit-content; */
-    /* height: fit-content; */
-}
+} */
 
-.container{
+/* .container{
     display: flex;
     flex-direction: row;
     columns: 2;
@@ -87,8 +199,7 @@ a ion-icon,span{
     justify-content: space-evenly;
     width: 100%;
     padding-top: 3%;
-    /*padding-bottom: 3%;*/
-}
+} */
 
 /**Selectores de id*/
 #data{
@@ -119,34 +230,11 @@ textarea[id="msg"] {
     padding: 5%;
 }
 
-button[name="atras"], button[name="adelante"]{
-    background-color: lightblue;
-    display: block;
-    height: 37px;
-    width: 37px;
-    border-radius: 15px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-button[name="atras"]{
-    background-image: url(img/flecha_izq.png);
-}
-
-button[name="adelante"]{
-    background-image: url(img/flecha_der.png);
-}
 
 input[type="number"]{
     border: 1px solid #ccc;
     padding: 5px;
     border-radius: 10px;
-}
-
-button:hover{
-    background-color: cyan;
-    cursor: pointer;
-    color: darkblue;
 }
 
 input[type="number"]:focus {
